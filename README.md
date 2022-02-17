@@ -103,3 +103,16 @@
                 code_string = "".join(str(item) for item in code_items)
                 self.number = code_string
                 super().save(*args, **kwargs)
+
+## 8. Create signals.py file in codes app and write the below code :
+
+    from users.models import CustomUser
+    from .models import Code
+    from django.db.models.signals import post_save
+    from django.dispatch import receiver
+
+
+    @receiver(post_save, sender=CustomUser)
+    def post_save_generate_code(sender, instance, created, *args, **kwargs):
+        if created:
+            Code.objects.create(user=instance)
