@@ -116,3 +116,12 @@
     def post_save_generate_code(sender, instance, created, *args, **kwargs):
         if created:
             Code.objects.create(user=instance)
+
+* now go to apps.py file of codes app and create function in CodesConfig class :
+            
+        def ready(self):
+            import codes.signals
+
+* now go to __init__.py file of codes app and write the following line:
+
+        default_app_config = 'codes.apps.CodesConfig'
