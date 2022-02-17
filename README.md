@@ -125,3 +125,20 @@
 * now go to __init__.py file of codes app and write the following line:
 
         default_app_config = 'codes.apps.CodesConfig'
+
+## 9. register Code in admin.py of code app.
+## 10. register CustomUser in admin.py of users app.
+
+## 11. Create forms.py file in codes app and write below code in it :
+
+    from django import forms
+    from .models import Code
+
+
+    class CodeForm(forms.ModelForm):
+        number = forms.CharField(
+            label="Code",  help_text="Enter SMS verification code.")
+
+        class Meta:
+            model = Code
+            fields = ('number',)
