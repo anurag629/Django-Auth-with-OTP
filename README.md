@@ -19,5 +19,23 @@
     django-admin startproject otpauth .
     python manage.py startapp users
     python manage.py startapp codes
-    
-        
+
+## 4. add apps other things to settings.py of project :
+
+* add installed apps :
+
+        INSTALLED_APPS = [
+            ....,
+            'users',
+            'codes',
+            'crispy_forms',
+            ....,
+        ]
+
+* add the below code anywhere in settings.py file :
+
+        CRISPY_TEMPLATE_PACK = 'bootstrap4'
+        LOGIN_URL = '/login/'
+        # default: accounts/login/
+
+* 
