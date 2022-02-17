@@ -62,3 +62,13 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         </body>
         </html>
+
+## 6. Create models in users app :
+
+    from django.db import models
+    from django.contrib.auth.models import AbstractUser
+    # Create your models here.
+
+
+    class CustomUser(AbstractUser):
+        phone_number = models.CharField(max_length=12)

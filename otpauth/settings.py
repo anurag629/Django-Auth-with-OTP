@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = '/login/'
 # default: accounts/login/
+AUTH_USER_MODEL = 'users.CustomUser'
 
 
 MIDDLEWARE = [
