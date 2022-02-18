@@ -22,7 +22,7 @@ def auth_view(request):
             request.session['pk'] = user.pk
             return redirect('verify_view')
 
-    return render(request, 'auth.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 
 def verify_view(request):
