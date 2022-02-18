@@ -1,4 +1,3 @@
-from urllib import request
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
@@ -21,7 +20,7 @@ def auth_view(request):
 
         if user is not None:
             request.session['pk'] = user.pk
-            return redirect('very_view')
+            return redirect('verify_view')
 
     return render(request, 'auth.html', {'form': form})
 
@@ -35,7 +34,7 @@ def verify_view(request):
         code_user = f"{user.username}: {user.code}"
         if not request.POST:
             # send sms
-            hello = "hello"
+            print(code_user)
 
         if form.is_valid():
             num = form.cleaned_data.get('number')
