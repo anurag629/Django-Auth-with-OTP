@@ -208,3 +208,51 @@
         path('verify/', verify_view, name='verify_view'),
     ]
 
+
+## 14. crete templates :
+* create auth.html :
+
+        {% extends 'base.html' %}
+
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+            <div class="row">
+                <div class="col-4">
+                    <form action="" method="POST" autocomplate="off">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+
+        {% endblock content %}
+
+* create main.html
+
+        {% extends 'base.html' %}
+
+        {% block content %}
+        Hello world
+
+        {% endblock content %}
+
+* create verify.html :
+
+        {% extends 'base.html' %}
+
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+            <div class="row">
+                <div class="col-4">
+                    <form action="" method="POST" autocomplate="off">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <button type="submit" class="btn btn-primary">Verify</button>
+                    </form>
+                </div>
+            </div>
+
+        {% endblock content %}
